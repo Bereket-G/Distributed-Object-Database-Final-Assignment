@@ -1,0 +1,42 @@
+Common
+    Person
+    Address
+
+Account
+    User
+    Role
+
+
+Academy
+    Department
+    Student
+    Lecturer (Vertical Partitioning to use only certain attributes )
+    Subject
+    Grade
+    ScoreRecord
+    Attendance (Horizontal Partitioning with date)
+        -
+
+Finance
+    -Payments
+        *Person Id
+        *Amount
+        *Currency
+        *tax
+        *ReasonId
+        *Date
+
+    -Payment reasons
+       *Id
+       *Reasons
+
+Report
+    Grade views
+    This Month Cost
+
+Log
+    Grade changes Log
+    API requests Log
+
+
+
