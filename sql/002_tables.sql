@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS "Log".grade_change_logs
 
 
 -- Drop Statements
-DROP  TABLE IF EXISTS  "Common"."Address" CASCADE ;
+/*DROP  TABLE IF EXISTS  "Common"."Address" CASCADE ;
 DROP  TABLE   "Common"."Person" CASCADE ;
 DROP  TABLE   "Account"."Role" ;
 DROP  TABLE   "Account"."User" ;
@@ -147,21 +147,8 @@ DROP  TABLE  "Academy"."Subject" CASCADE ;
 DROP  TABLE  "Academy"."ScoreRecord" ;
 DROP  TABLE  "Academy"."Grade" CASCADE ;
 DROP  TABLE  "Academy"."Attendance" CASCADE ;
-DROP  TABLE  "Academy"."Department" CASCADE ;
+DROP  TABLE  "Academy"."Department" CASCADE ;*/
 ------------------------------------
-
-
-
--- Data Insert
-
-
-
-
-
-
-
-
-
 
 
 
