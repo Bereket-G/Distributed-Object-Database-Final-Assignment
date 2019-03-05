@@ -59,6 +59,7 @@ INSERT INTO "Academy"."Student" ("Name","DateOfBirth","Sex","Phone","AddressId",
 
 
 
+INSERT INTO "Academy"."Student" ("Name","DateOfBirth","Sex","Phone","AddressId","EnrolledYear","DepartmentId") VALUES ('Abraham I. Underwood','04/06/1986',' Female','+251-924-626-5995',2,'2009-11-25 13:14:34',5);
 
 -- Lecturers Insert statements
 
@@ -85,6 +86,8 @@ INSERT INTO "Academy"."Subject" ("Name","Abbreviation","LecturerID") VALUES (' S
 INSERT INTO "Academy"."Grade" ("Name", "GradeRange") VALUES ('A+','[90,99)'::int4range ), ('A','[83,90)'::int4range ), ('A-','[80,83)'::int4range );
 INSERT INTO "Academy"."Grade" ("Name", "GradeRange") VALUES ('B+','[75,80)'::int4range ), ('B','[70,75)'::int4range ), ('B-','[65,70)'::int4range );
 INSERT INTO "Academy"."Grade" ("Name", "GradeRange") VALUES ('C+','[60,65)'::int4range ), ('C','[55,60)'::int4range ), ('C-','[50,55)'::int4range );
+INSERT INTO "Academy"."Grade" ("Name", "GradeRange") VALUES ('D','[40,50)'::int4range ), ('Fx','[30,40)'::int4range ), ('F','[20,30)'::int4range );
+INSERT INTO "Academy"."Grade" ("Name", "GradeRange") VALUES ('NG','[0,20)'::int4range );
 
 
 
@@ -92,7 +95,7 @@ INSERT INTO "Academy"."Grade" ("Name", "GradeRange") VALUES ('C+','[60,65)'::int
 -- ScoreRecord Insert statement
 
 INSERT INTO "Academy"."ScoreRecord" ("IDSubject","IDStudent","FinalGrade","Year") VALUES (4,29,' 2.64 ','2001-03-08T12:38:46-08:00'),(4,24,' 2.25 ','2002-06-25T16:50:51-07:00'),(2,27,' 3.53 ','2004-07-29T08:30:08-07:00'),(8,18,' 3.43 ','2004-11-12T20:47:35-08:00'),(8,22,' 3.19 ','2003-07-22T15:22:55-07:00');
-INSERT INTO "Academy"."ScoreRecord" ("IDSubject","IDStudent","FinalGrade","Year") VALUES (2,14,' 2.77 ','2005-03-14T10:19:10-08:00'),(8,12,'','2004-05-05T09:28:18-07:00'),(5,28,' 2.71 ','2002-03-06T04:03:31-08:00'),(2,27,' 3.44 ','2005-06-29T14:39:27-07:00'),(2,26,' 2.45 ','2004-09-24T19:18:52-07:00');
+INSERT INTO "Academy"."ScoreRecord" ("IDSubject","IDStudent","FinalGrade","Year") VALUES (2,14,' 2.77 ','2005-03-14T10:19:10-08:00'),(8,12,' 3.14 ' ,'2004-05-05T09:28:18-07:00'),(5,28,' 2.71 ','2002-03-06T04:03:31-08:00'),(2,27,' 3.44 ','2005-06-29T14:39:27-07:00'),(2,26,' 2.45 ','2004-09-24T19:18:52-07:00');
 INSERT INTO "Academy"."ScoreRecord" ("IDSubject","IDStudent","FinalGrade","Year") VALUES (4,9,' 2.76 ','2003-11-11T04:22:37-08:00'),(6,23,' 3.03 ','2005-06-21T15:08:49-07:00'),(2,28,' 1.90 ','2005-12-16T02:57:37-08:00'),(2,21,' 2.98 ','2001-05-23T16:04:19-07:00'),(5,3,' 1.55 ','2003-09-27T16:57:21-07:00');
 INSERT INTO "Academy"."ScoreRecord" ("IDSubject","IDStudent","FinalGrade","Year") VALUES (4,15,' 1.84 ','2002-11-06T05:29:32-08:00'),(5,4,' 2.16 ','2004-09-23T12:56:59-07:00'),(3,10,' 2.16 ','2003-05-27T05:38:05-07:00'),(5,16,' 1.97 ','2005-07-17T21:42:56-07:00'),(8,17,' 2.49 ','2001-03-23T18:32:50-08:00');
 INSERT INTO "Academy"."ScoreRecord" ("IDSubject","IDStudent","FinalGrade","Year") VALUES (8,20,' 1.98 ','2002-08-02T02:53:02-07:00'),(4,9,' 2.25 ','2005-10-05T12:03:11-07:00'),(6,27,' 2.34 ','2001-08-08T08:58:42-07:00'),(3,14,' 3.28 ','2003-01-06T02:53:48-08:00'),(3,12,' 1.61 ','2002-05-30T03:33:45-07:00');
@@ -167,7 +170,9 @@ INSERT INTO "Finance"."Payments" ("LecturerID","Amount","Currency","IDReason","P
 
 
 
-
+UPDATE "Academy"."ScoreRecord"
+SET "FinalGrade" = "FinalGrade" * 25
+WHERE "Academy"."ScoreRecord"."FinalGrade" > 0 ;
 
 
 
